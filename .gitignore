@@ -1,0 +1,5 @@
+*.txt
+*.jar
+*.class
+/target
+/.vscode
