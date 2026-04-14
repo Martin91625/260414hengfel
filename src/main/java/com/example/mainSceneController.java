@@ -1,5 +1,7 @@
 package com.example;
 
+import java.util.InputMismatchException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
@@ -21,11 +23,19 @@ public class mainSceneController {
     }
 
     void startCalc() {
+        this.testInput();
         double radius = Double.parseDouble(radiusField.getText());
         double height = Double.parseDouble(heightField.getText());
-
         double surface = Cylinder.calcSurface(radius, height);
         
         surfaceField.setText(String.valueOf(surface));
+    }
+
+    void testInput() {
+        String radiusStr = radiusField.getText();
+        String heightStr = heightField.getText();
+        if (radiusStr.isEmpty() || heightStr.isEmpty()) {
+            throw new InputMismatchException("Hiba! A mezők nem lehetnek üresek!");            
+        }
     }
 }
