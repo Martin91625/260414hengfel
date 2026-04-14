@@ -17,7 +17,7 @@ public class mainSceneController {
 
     @FXML
     void onClickCalcButton(ActionEvent event) {
-        
+        this.startCalc();
     }
 
     void startCalc() {
